@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Compêndio do Aventureiro</title>
+    <!-- Bootstrap CSS via CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="imagens/logo.png" type="image/png" />
+  </head>
+  <body>
+    <!-- Navbar idêntica -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Compêndio do Aventureiro</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="fal se"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cadastro.html">Cadastro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="listagem.html">Listagem</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="dashboard.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="racas.html">Raças</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container mt-4">
+      <h2 class="text-center">Dashboard do Mestre</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card text-white bg-primary mb-3">
+            <div class="card-header">Total de Monstros</div>
+            <div class="card-body">
+              <h5 class="card-title">127</h5>
+              <p class="card-text">Monstros catalogados no compêndio.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-white bg-success mb-3">
+            <div class="card-header">Raças Disponíveis</div>
+            <div class="card-body">
+              <h5 class="card-title">9</h5>
+              <p class="card-text">Raças para criar seu personagem.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-white bg-warning mb-3">
+            <div class="card-header">Itens Mágicos</div>
+            <div class="card-body">
+              <h5 class="card-title">45</h5>
+              <p class="card-text">Artefatos e itens para aventuras.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-center mt-4">Gráfico de Estatísticas</h3>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <canvas id="statsChart"></canvas>
+        </div>
+      </div>
+    </main>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const ctx = document.getElementById('statsChart').getContext('2d');
+      const statsChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Monstros', 'Raças', 'Itens Mágicos'],
+          datasets: [{
+            label: 'Quantidade',
+            data: [127, 9, 45],
+            backgroundColor: [
+              'rgba(0, 123, 255, 0.5)',
+              'rgba(40, 167, 69, 0.5)',
+              'rgba(255, 193, 7, 0.5)'
+            ],
+            borderColor: [
+              'rgba(0, 123, 255, 1)',
+              'rgba(40, 167, 69, 1)',
+              'rgba(255, 193, 7, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
