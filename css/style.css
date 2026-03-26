@@ -1,0 +1,98 @@
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital@0;1&family=MedievalSharp&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Merriweather:wght@400;700&display=swap');
+
+/* Variáveis de Cores e Fontes */
+:root {
+    --cor-fundo-geral: #f0e6c7;
+    --cor-musgo-escuro: #4A5D4D;
+    --cor-musgo-medio: #6B8E6D;
+    --cor-musgo-claro: #9BB89A;
+    --cor-cobre: #B87333;
+    --cor-ouro-velho: #DAA520;
+    --cor-texto-principal: #4A3C32;
+    --cor-texto-claro: #ecf0f1;
+    --cor-borda: #7b5b3a;
+    --fonte-titulo: 'IM Fell Double Pica', serif;
+    --fonte-corpo: 'Merriweather', serif;
+}
+
+/* Body básico */
+body {
+    font-family: var(--fonte-corpo);
+    background-color: var(--cor-fundo-geral);
+    color: var(--cor-texto-principal);
+}
+
+/* Header simplificado */
+header {
+    background-color: var(--cor-musgo-escuro);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 20px;
+}
+
+header .logo {
+    max-width: 150px;
+    border: 2px solid var(--cor-ouro-velho);
+    border-radius: 50%;
+}
+
+header h1 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-ouro-velho);
+}
+
+/* Navbar override para Bootstrap */
+.navbar-dark {
+    background-color: var(--cor-musgo-medio) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--cor-texto-claro) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    background-color: var(--cor-cobre);
+    color: var(--cor-musgo-escuro) !important;
+}
+
+/* Main e seções */
+main {
+    padding: 20px 0;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-cobre);
+}
+
+/* Cards e componentes Bootstrap customizados */
+.card {
+    border-color: var(--cor-borda);
+}
+
+.btn-primary {
+    background-color: var(--cor-cobre);
+    border-color: var(--cor-ouro-velho);
+}
+
+.btn-primary:hover {
+    background-color: #965A2C;
+}
+
+/* Tabela */
+.table {
+    color: var(--cor-texto-principal);
+}
+
+/* Footer */
+footer {
+    background-color: var(--cor-musgo-escuro);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 20px;
+}
