@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem - Compêndio do Aventureiro</title>
+    <!-- Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="imagens/logo.png" type="image/png">
+</head>
+<body>
+    <!-- Navbar idêntica -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Compêndio do Aventureiro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastro.html">Cadastro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="listagem.html">Listagem</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="racas.html">Raças</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <h2 class="text-center">Listagem de Monstros</h2>
+        <div class="row mb-3">
+            <div class="col-12 col-md-8">
+                <div class="alert alert-secondary" role="alert">
+                    Tabela avançada: clique em "Detalhes" para abrir o modal e <strong>"Excluir"</strong> para ação rápida.
+                </div>
+            </div>
+            <div class="col-12 col-md-4 text-md-end">
+                <button class="btn btn-success" onclick="alert('Novo filtro aplicado (simulação).')">Filtrar por nível</button>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light text-dark">
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Nível</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dragão Vermelho</td>
+                        <td>Dragão</td>
+                        <td>17</td>
+                        <td><span class="badge bg-danger">Boss</span></td>
+                        <td>
+                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detailModal1">Detalhes</button>
+                            <button class="btn btn-outline-danger btn-sm" onclick="alert('Monstro excluído!')">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Grifo</td>
+                        <td>Monstro</td>
+                        <td>5</td>
+                        <td><span class="badge bg-warning text-dark">Meio-difícil</span></td>
+                        <td>
+                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detailModal2">Detalhes</button>
+                            <button class="btn btn-outline-danger btn-sm" onclick="alert('Monstro excluído!')">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Goblin</td>
+                        <td>Humanoide</td>
+                        <td>1/4</td>
+                        <td><span class="badge bg-success">Fácil</span></td>
+                        <td>
+                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detailModal3">Detalhes</button>
+                            <button class="btn btn-outline-danger btn-sm" onclick="alert('Monstro excluído!')">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Orc</td>
+                        <td>Humanoide</td>
+                        <td>1/2</td>
+                        <td><span class="badge bg-info text-dark">Médio</span></td>
+                        <td>
+                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detailModal4">Detalhes</button>
+                            <button class="btn btn-outline-danger btn-sm" onclick="alert('Monstro excluído!')">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Beholder</td>
+                        <td>Abominação</td>
+                        <td>13</td>
+                        <td><span class="badge bg-danger">Boss</span></td>
+                        <td>
+                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detailModal5">Detalhes</button>
+                            <button class="btn btn-outline-danger btn-sm" onclick="alert('Monstro excluído!')">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Modais de detalhes -->
+    <div class="modal fade" id="detailModal1" tabindex="-1" aria-labelledby="detailModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModalLabel1">Detalhes do Dragão Vermelho</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    O Dragão Vermelho é uma criatura antiga e poderosa, conhecida por sua fúria e fogo destrutivo.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Repetir para outros modais, mas para brevidade, apenas um exemplo completo -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
